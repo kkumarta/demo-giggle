@@ -9,8 +9,8 @@ jobs:
       - run: 
           name: Build step for C code
           command: |
-             set -o pipefail && gc giggle.c -o giggle.out | tee ~/cmd_full_output
-             echo "${PIPESTATUS[0]}"
+             set -o pipefail && gc giggle.c -o giggle.out | tee ~/cmd_full_output; echo "${PIPESTATUS[0]}"
+             
              echo $cmd_full_output
              
       - run: 
