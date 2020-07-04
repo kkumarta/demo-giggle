@@ -8,5 +8,5 @@ workflows:
       steps:
         - checkout
         - run: make
-  	      path: /home/build
-  	    - store_artifacts
+        - store_artifacts
+            path: /home/build
