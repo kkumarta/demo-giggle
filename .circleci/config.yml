@@ -6,6 +6,6 @@ jobs:
     working_directory: ~/work
     steps:
       - checkout
-      - run: make
+      - run: gcc 
       - store_artifacts:
           path: /home/build
