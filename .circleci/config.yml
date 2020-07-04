@@ -8,4 +8,5 @@ jobs:
       - checkout
       - run: gcc giggle.c
       - store_artifacts:
-          path: /home/build
+          path: ~/work
+          destination: /home/build
