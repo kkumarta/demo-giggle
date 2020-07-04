@@ -10,15 +10,7 @@ jobs:
           name: Build step for C code
           command: |
              gc giggle.c -o giggle.out | echo "${PIPESTATUS[0]}" | tee ~/cmd_full_output 
-             if [ -z "$cmd_full_output" ]
-             then
-                  echo "\$cmd_full_output is empty"
-             else
-                  echo "\$cmd_full_output is NOT empty"
-             fi
 
-             echo $cmd_full_output
-             
       - run: 
           name: Running out file and Store the ouput to html file
           command: |
