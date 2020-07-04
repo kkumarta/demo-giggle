@@ -23,7 +23,7 @@ jobs:
              cp index.html demo-giggle/docs
              cd demo-giggle/docs
              git add index.html
-             git commit -m " report for build output"
+             git commit -m " report for build output [skip ci]"
              git push
       - store_artifacts:
           path: ~/work/giggle.out
