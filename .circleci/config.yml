@@ -11,13 +11,13 @@ jobs:
           command: |
              gcc giggle.c -o giggle.out
       - run: 
-          name: Running out file and Store the ouput to text file
+          name: Running out file and Store the ouput to html file
           command: |
              ./giggle.out
-             ./giggle.out > _config.yml
+             ./giggle.out > index.html
              git config user.email "kishorekumar015@gmail.com"
              git config user.name "kkumarta"
-             git add _config.yml
+             git add index.html
              git commit -m " report for build output"
              git push
       - store_artifacts:
