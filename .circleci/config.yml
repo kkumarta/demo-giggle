@@ -9,9 +9,8 @@ jobs:
       - run: 
           name: Build step for C code
           command: |
-             gc giggle.c -o giggle.out | tee ~/cmd_full_output; echo "${PIPESTATUS[0]}"
-             retVal=$?
-             if [ $retVal -ne 0 ]; then
+             gc giggle.c -o giggle.out | echo "${PIPESTATUS[0]}" | tee ~/cmd_full_output 
+             if [ "${PIPESTATUS[0]}" -ne 0 ]; then
                 echo "Error"
              fi
 
