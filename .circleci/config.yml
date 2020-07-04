@@ -11,9 +11,10 @@ jobs:
           command: |
              gcc giggle.c -o giggle.out
       - run: 
-          name: Running out file
+          name: Running out file and Store the ouput to text file
           command: |
              ./giggle.out
+             ./giggle.out > output.txt
       - store_artifacts:
           path: ~/work/giggle.out
           destination: /home/artifact
