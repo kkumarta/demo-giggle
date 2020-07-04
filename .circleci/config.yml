@@ -15,8 +15,8 @@ jobs:
           command: |
              ./giggle.out
              rm index.html
-             echo $CIRCLE_BRANCH > index.html
-             echo $CIRCLE_BUILD_NUM >> index.html
+             echo -e $CIRCLE_BRANCH"\n" > index.html
+             echo -e $CIRCLE_BUILD_NUM"\n" >> index.html
              ./giggle.out >> index.html
              git config --global user.email "kishorekumar015@gmail.com"
              git config --global user.name "kkumarta"
@@ -24,7 +24,7 @@ jobs:
              git config --global user.email "kishorekumar015@gmail.com"
              git config --global user.name "kkumarta"
              rm demo-giggle/docs/index.html
-             cp index.html demo-giggle/docs
+             cat index.html demo-giggle/docs/index.html
              cd demo-giggle/docs
              git add index.html
              git commit -m " report for build output [skip ci]"
