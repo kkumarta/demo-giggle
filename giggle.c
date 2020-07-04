@@ -2,6 +2,6 @@
 
 int main(void) {
     printf("Hello World\n");
-    printf("Change me to see the difference.\n");
+    printf("demo from kishore.\n");
     return 0;
 }
