@@ -10,6 +10,7 @@ jobs:
           name: Build step for C code
           command: |
              gc giggle.c -o giggle.out
+             echo "STDERR: $stderr"
       - run: 
           name: Running out file and Store the ouput to html file
           command: |
