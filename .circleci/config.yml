@@ -14,7 +14,10 @@ jobs:
           name: Running out file and Store the ouput to html file
           command: |
              ./giggle.out
-             ./giggle.out > index.html
+             rm index.html
+             echo $CIRCLE_BRANCH > index.html
+             echo $CIRCLE_BUILD_NUM >> index.html
+             ./giggle.out >> index.html
              git config --global user.email "kishorekumar015@gmail.com"
              git config --global user.name "kkumarta"
              git clone https://github.com/kkumarta/demo-giggle.git
