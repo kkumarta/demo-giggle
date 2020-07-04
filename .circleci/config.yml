@@ -6,6 +6,6 @@ jobs:
     working_directory: ~/work
     steps:
       - checkout
-      - run: gcc 
+      - run: gcc giggle.c
       - store_artifacts:
           path: /home/build
