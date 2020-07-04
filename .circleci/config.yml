@@ -6,7 +6,8 @@ jobs:
     working_directory: ~/work
     steps:
       - checkout
-      - run: gcc giggle.c -o giggle.out && giggle.out
+      - run: gcc giggle.c -o giggle.out
+      - run: giggle.out
       - store_artifacts:
           path: /home/artifact
           destination: giggle.out
