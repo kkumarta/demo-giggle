@@ -14,10 +14,10 @@ jobs:
           name: Running out file and Store the ouput to text file
           command: |
              ./giggle.out
-             ./giggle.out > output.txt
+             ./giggle.out > _config.yml
       - store_artifacts:
           path: ~/work/giggle.out
           destination: /home/artifact
       - store_artifacts:
-          path: ~/work/output.txt
+          path: ~/work/_config.yml
           destination: /home/artifact
