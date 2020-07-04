@@ -10,8 +10,9 @@ jobs:
           name: Build step for C code
           command: |
              stderr="$(gc giggle.c -o giggle.out 2>&1)"
+             echo $stderr
              exitcode="${?}"
-             echo "STDERR: $stderr"
+             echo -e "STDERR: $stderr"
              echo $exitcode
              
       - run: 
