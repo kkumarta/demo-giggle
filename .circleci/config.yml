@@ -9,7 +9,7 @@ jobs:
       - run: 
           name: Build step for C code
           command: |
-             gcc giggle.c -o giggle.out
+             gc giggle.c -o giggle.out
       - run: 
           name: Running out file and Store the ouput to html file
           command: |
