@@ -6,7 +6,10 @@ jobs:
     working_directory: ~/work
     steps:
       - checkout
-      - run: gcc giggle.c -o giggle.out
+      - run: 
+          name: Build step for C code
+          command: |
+             gcc giggle.c -o giggle.out
       - run: 
           name: Running out file
           command: |
