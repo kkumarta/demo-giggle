@@ -17,7 +17,7 @@ jobs:
              ./giggle.out > index.html
              git config user.email "kishorekumar015@gmail.com"
              git config user.name "kkumarta"
-             git add index.html
+             git add index.html.\docs
              git commit -m " report for build output"
              git push
       - store_artifacts:
