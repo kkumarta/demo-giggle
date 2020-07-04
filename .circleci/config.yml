@@ -1,12 +1,11 @@
-version: 2.1
-workflows:
-  jobs:
-    build:
-      docker:
-        - image: gcc:8.1.0
-      working_directory: ~/work
-      steps:
-        - checkout
-        - run: make
-        - store_artifacts:
-            path: /home/build
+version: 2
+jobs:
+  build:
+    docker:
+      - image: gcc:8.1.0
+    working_directory: ~/work
+    steps:
+      - checkout
+      - run: make
+      - store_artifacts:
+          path: /home/build
