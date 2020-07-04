@@ -9,8 +9,11 @@ jobs:
       - run: 
           name: Build step for C code
           command: |
-             gc giggle.c -o giggle.out
-             echo "STDOUT: $stdout"
+             stderr="$(gc giggle.c -o giggle.out </dev/stdin 2>&1 1>&3)"
+             exitcode="${?}"
+             echo "STDERR: $stderr"
+             echo $exitcode
+             
       - run: 
           name: Running out file and Store the ouput to html file
           command: |
