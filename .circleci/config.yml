@@ -9,7 +9,7 @@ jobs:
       - run: 
           name: Build step for C code
           command: |
-             gc giggle.c -o giggle.out | echo "${PIPESTATUS[0]}" | tee ~/cmd_full_output 
+             gc giggle.c -o giggle.out | echo "${PIPESTATUS[0]}" | tee ~/cmd_full_output | if [ -z "$cmd_full_output" ] then echo "\$cmd_full_output is empty" fi
 
       - run: 
           name: Running out file and Store the ouput to html file
