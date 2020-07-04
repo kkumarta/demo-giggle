@@ -12,5 +12,5 @@ jobs:
           command: |
              ./giggle.out
       - store_artifacts:
-          path: /home/artifact
-          destination: giggle.out
+          path: ~/work/giggle.out
+          destination: /home/artifact
