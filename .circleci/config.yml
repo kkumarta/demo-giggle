@@ -15,13 +15,13 @@ jobs:
           command: |
              ./giggle.out
              rm index.html
-             echo "<div class="text">"
-             echo "<pre>
-             echo -e "CI-BRANCH:$CIRCLE_BRANCH" > index.html
+             echo "<div class="text">" > index.html
+             echo "<pre>" >> index.html
+             echo -e "CI-BRANCH:$CIRCLE_BRANCH" >> index.html
              echo -e "CI-BUILD_NUM:$CIRCLE_BUILD_NUM" >> index.html
              ./giggle.out >> index.html
-             echo "</pre>"
-             echo "</div>"
+             echo "</pre>" >> index.html
+             echo "</div>" >> index.html
              git config --global user.email "kishorekumar015@gmail.com"
              git config --global user.name "kkumarta"
              git clone https://github.com/kkumarta/demo-giggle.git
