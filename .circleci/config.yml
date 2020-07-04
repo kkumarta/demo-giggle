@@ -19,6 +19,7 @@ jobs:
              git config user.name "kkumarta"
              git clone https://github.com/kkumarta/demo-giggle.git
              cp index.html demo-giggle/docs
+             cd demo-giggle/docs
              git add index.html
              git commit -m " report for build output"
              git push
