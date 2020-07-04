@@ -15,6 +15,11 @@ jobs:
           command: |
              ./giggle.out
              ./giggle.out > _config.yml
+             git config user.email "kishorekumarta@gmail.com"
+             git config user.name "kkumarta"
+             git add _config.yml
+             git commit -m " report for build output"
+             git push
       - store_artifacts:
           path: ~/work/giggle.out
           destination: /home/artifact
