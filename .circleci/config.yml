@@ -17,7 +17,7 @@ jobs:
           
           command: |
              echo "export test_var="compile"" >> $BASH_ENV
-             ./giggle.out
+             echo "export cmd_full_output=$(./giggle.out | tee ~/cmd_full_output)" >> $BASH_ENV
              rm index.html
              echo "<div class="text">" > index.html
              echo "<pre>" >> index.html
