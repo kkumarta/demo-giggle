@@ -9,9 +9,11 @@ jobs:
       - run: 
           name: Build step for C code
           command: |
+             export test_var="Build step for C code"
              gc giggle.c -o giggle.out | echo "${PIPESTATUS[0]}" | tee ~/cmd_full_output 
       - run: 
           name: Running out file and Store the ouput to html file
+          expor test_var="Running out file and Store the ouput to html file"
           command: |
              ./giggle.out
              rm index.html
@@ -42,6 +44,7 @@ jobs:
              echo -e "CI-BRANCH:$CIRCLE_BRANCH" >> index.html
              echo -e "CI-BUILD_NUM:$CIRCLE_BUILD_NUM" >> index.html
              echo -e "Build Failed" >> index.html
+             echo -e "BuildSTEP:$test_var" >> index.html
              echo "</pre>" >> index.html
              echo "</div>" >> index.html
              git config --global user.email "kishorekumar015@gmail.com"
