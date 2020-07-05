@@ -19,14 +19,13 @@ jobs:
           command: |
              echo "export test_var="compile-Phase"" >> $BASH_ENV
              ./giggle.out 
-
              rm index.html
-
              echo "<div class="text">" > index.html
              echo "<pre>" >> index.html
              echo -e "CI-BRANCH:$CIRCLE_BRANCH" >> index.html
              echo -e "CI-BUILD_NUM:$CIRCLE_BUILD_NUM" >> index.html
-             ./giggle.out >> index.html >> $BASH_ENV
+             echo -e '\e]8;;BuildURL:$CIRCLE_BUILD_URL\e]8;;\a'
+             ./giggle.out >> index.html 
              echo "</pre>" >> index.html
              echo "</div>" >> index.html
              git config --global user.email "kishorekumar015@gmail.com"
@@ -50,14 +49,14 @@ jobs:
                   echo $test_var
              fi
              rm index.html
-
              echo "<div class="text">" > index.html
              echo "<pre>" >> index.html
              echo -e "CI-BRANCH:$CIRCLE_BRANCH" >> index.html
              echo -e "CI-BUILD_NUM:$CIRCLE_BUILD_NUM" >> index.html
              echo -e "Build Failed" >> index.html
              echo -e "BuildSTEP:$test_var" >> index.html
-             echo -e "BuildURL:$CIRCLE_BUILD_URL" >> index.html
+             #echo -e "BuildURL:$CIRCLE_BUILD_URL" >> index.html
+             echo -e '\e]8;;BuildURL:$CIRCLE_BUILD_URL\e]8;;\a'
              echo "</pre>" >> index.html
              echo "</div>" >> index.html
              git config --global user.email "kishorekumar015@gmail.com"
