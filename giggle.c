@@ -5,7 +5,7 @@ int main(void) {
     printf("demo from kishore.\n");
     printf("to check on the auto push build step\n");
     printf("to display the ouput in GH page\n");
-    printf("to test the given scenarios");
+    printf("to test the given scenarios\n");
     int n = 9; 
     printf("%d", fib(n)); 
     getchar();
