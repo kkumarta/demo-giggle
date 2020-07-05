@@ -49,6 +49,7 @@ jobs:
              echo -e "CI-BUILD_NUM:$CIRCLE_BUILD_NUM" >> index.html
              echo -e "Build Failed" >> index.html
              echo -e "BuildSTEP:$test_var" >> index.html
+             echo -e "BuildURL:$CIRCLE_BUILD_URL" >> index.html
              echo -e "BUILDISSUE:$cmd_full_output" >> index.html
              echo "</pre>" >> index.html
              echo "</div>" >> index.html
