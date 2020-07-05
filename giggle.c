@@ -7,6 +7,7 @@ int main(void) {
     printf("to display the ouput in GH page\n");
     printf("to test the given scenarios\n");
     int n = 9; 
+    printf("The fib sequence output for number 9 is below\n");
     printf("%d", fib(n)); 
     getchar();
     return 0;
