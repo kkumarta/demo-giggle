@@ -11,14 +11,14 @@ jobs:
           command: |
              
              echo "export test_var="Build"" >> $BASH_ENV
-             export cmd_full_output=$(gc giggle.c -o giggle.out  2>&1 > /dev/null) >> $BASH_ENV
+             echo "export cmd_full_output=$(gc giggle.c -o giggle.out  2>&1 > /dev/null)" >> $BASH_ENV
              
       - run: 
           name: Running out file and Store the ouput to html file
           
           command: |
              echo "export test_var="compile"" >> $BASH_ENV
-             export cmd_full_output=$(./giggle.out  2>&1 > /dev/null) >> $BASH_ENV
+             echo "export cmd_full_output=$(./giggle.out  2>&1 > /dev/null)" >> $BASH_ENV
 
              rm index.html
              echo "<div class="text">" > index.html
