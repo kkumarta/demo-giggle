@@ -26,7 +26,7 @@ jobs:
              echo -e "CI-BUILD_NUM:$CIRCLE_BUILD_NUM" >> index.html
              echo -e "BuildURL:<a href =$CIRCLE_BUILD_URL>$CIRCLE_BUILD_URL</a>" >> index.html
              echo -e "Code OutPut:" >> index.html
-             echo -e "------------------------------------------------" >> index.html
+             echo -e "-------------------------------------------------------------------------" >> index.html
              ./giggle.out >> index.html 
              echo "</pre>" >> index.html
              echo "</div>" >> index.html
@@ -57,7 +57,7 @@ jobs:
              echo -e "CI-BUILD_NUM:$CIRCLE_BUILD_NUM" >> index.html
              echo -e "Build Failed" >> index.html
              echo -e "BuildIssueSTEP:$test_var" >> index.html
-             echo -e "BuildURL:<a>$CIRCLE_BUILD_URL</a>" >> index.html
+             echo -e "BuildURL:<a href =$CIRCLE_BUILD_URL>$CIRCLE_BUILD_URL</a>" >> index.html
             
              echo "</pre>" >> index.html
              echo "</div>" >> index.html
