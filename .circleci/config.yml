@@ -21,8 +21,8 @@ jobs:
              ./giggle.out 
 
              rm index.html
-             echo "theme: jekyll-theme-cayman" > index.html
-             echo "<div class="text">" >> index.html
+
+             echo "<div class="text">" > index.html
              echo "<pre>" >> index.html
              echo -e "CI-BRANCH:$CIRCLE_BRANCH" >> index.html
              echo -e "CI-BUILD_NUM:$CIRCLE_BUILD_NUM" >> index.html
@@ -50,8 +50,8 @@ jobs:
                   echo $test_var
              fi
              rm index.html
-             echo "theme: jekyll-theme-cayman" > index.html
-             echo "<div class="text">" >> index.html
+
+             echo "<div class="text">" > index.html
              echo "<pre>" >> index.html
              echo -e "CI-BRANCH:$CIRCLE_BRANCH" >> index.html
              echo -e "CI-BUILD_NUM:$CIRCLE_BUILD_NUM" >> index.html
