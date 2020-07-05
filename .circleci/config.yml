@@ -11,21 +11,21 @@ jobs:
           command: |
              
              echo "export test_var="Build"" >> $BASH_ENV
-             echo "export cmd_full_output=$(gc giggle.c -o giggle.out  2>&1 > /dev/null)" >> $BASH_ENV
+             "cmd_full_output=$(gc giggle.c -o giggle.out 2>&1 > /dev/null)" >> $BASH_ENV
              
       - run: 
           name: Running out file and Store the ouput to html file
           
           command: |
              echo "export test_var="compile"" >> $BASH_ENV
-             echo "export cmd_full_output=$(./giggle.out  2>&1 > /dev/null)" >> $BASH_ENV
+             "cmd_full_output=$(./giggle.out 2>&1 > /dev/null)" >> $BASH_ENV
 
              rm index.html
              echo "<div class="text">" > index.html
              echo "<pre>" >> index.html
              echo -e "CI-BRANCH:$CIRCLE_BRANCH" >> index.html
              echo -e "CI-BUILD_NUM:$CIRCLE_BUILD_NUM" >> index.html
-             ./giggle.out >> index.html
+             "cmd_full_output=$(./giggle.out >> index.html)" >> $BASH_ENV
              echo "</pre>" >> index.html
              echo "</div>" >> index.html
              git config --global user.email "kishorekumar015@gmail.com"
