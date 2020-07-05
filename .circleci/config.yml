@@ -11,7 +11,7 @@ jobs:
           command: |
              
              echo "export test_var="Build-Phase"" >> $BASH_ENV
-             gc giggle.c -o giggle.out | tee ~/tmp/output.log
+             gcc giggle.c -o giggle.out | tee ~/tmp/output.log
             
       - run: 
           name: Running out file and Store the ouput to html file
