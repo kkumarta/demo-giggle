@@ -17,8 +17,8 @@ jobs:
           name: Running out file and Store the ouput to html file
           
           command: |
-             echo "export test_var="compile-Phase"" >> $BASH_ENV
-             ./giggle.out 
+             echo "export test_var="Execution-Phase"" >> $BASH_ENV
+             ./gggle.out 
              rm index.html
              echo "<div class="text">" > index.html
              echo "<pre>" >> index.html
