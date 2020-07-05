@@ -9,14 +9,14 @@ jobs:
       - run: 
           name: Build step for C code
           command: |
-             test_var="Build step for C code"
-             echo $test_var
+             
+             echo "export test_var="Build step for C code" >> $BASH_ENV
              gc giggle.c -o giggle.out | echo "${PIPESTATUS[0]}" | tee ~/cmd_full_output 
       - run: 
           name: Running out file and Store the ouput to html file
           
           command: |
-             test_var="Running out file and Store the ouput to html file"
+             echo "export test_var="Build step for C code" >> $BASH_ENV
              ./giggle.out
              rm index.html
              echo "<div class="text">" > index.html
