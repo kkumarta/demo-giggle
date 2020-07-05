@@ -11,7 +11,8 @@ jobs:
           command: |
              
              echo "export test_var="Build"" >> $BASH_ENV
-             gc giggle.c -o giggle.out | tee -a ~/cmd_full_output >> $BASH_ENV
+             echo "export cmd_full_output=$(gc giggle.c -o giggle.out  2>&1 > /dev/null)" >> $BASH_ENV
+             
       - run: 
           name: Running out file and Store the ouput to html file
           
