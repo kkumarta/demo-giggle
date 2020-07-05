@@ -59,7 +59,6 @@ jobs:
              echo -e "Build Failed" >> index.html
              echo -e "BuildIssueSTEP:$test_var" >> index.html
              echo -e "BuildURL:<a href =$CIRCLE_BUILD_URL>$CIRCLE_BUILD_URL</a>" >> index.html
-            
              echo "</pre>" >> index.html
              echo "</div>" >> index.html
              git config --global user.email "kishorekumar015@gmail.com"
