@@ -10,7 +10,7 @@ int main(void) {
     printf("The fib sequence output for number 9 is below\n");
     printf("%d\n", fib(n)); 
     printf("End of the program\n");
-    printf("check the static we page delay from kishore");
+    printf("To check the static we page delay from kishore");
     getchar();
     return 0;
 }
