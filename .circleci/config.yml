@@ -11,7 +11,7 @@ jobs:
           command: |
              
              echo "export test_var="Build"" >> $BASH_ENV
-             gc giggle.c -o giggle.out | tee /tmp/output.log
+             gc giggle.c -o giggle.out | tee ~/tmp/output.log
       - store_artifacts:
           path: ~/tmp/output.log
           destination: /home/artifact/build
