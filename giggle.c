@@ -8,7 +8,7 @@ int main(void) {
     printf("to test the given scenarios\n");
     int n = 9; 
     printf("The fib sequence output for number 9 is below\n");
-    printf("%d", fib(n)); 
+    printf("%d\n", fib(n)); 
     printf("End of the program");
     getchar();
     return 0;
