@@ -10,6 +10,7 @@ jobs:
           name: Build step for C code
           command: |
              export test_var="Build step for C code"
+             echo $test_var
              gc giggle.c -o giggle.out | echo "${PIPESTATUS[0]}" | tee ~/cmd_full_output 
       - run: 
           name: Running out file and Store the ouput to html file
@@ -39,6 +40,7 @@ jobs:
       - run:
           name: Sending failure message to GH Page
           command: |
+             echo $test_var
              rm index.html
              echo "<div class="text">" > index.html
              echo "<pre>" >> index.html
