@@ -5,7 +5,7 @@ jobs:
       - image: gcc:8.1.0
     working_directory: ~/work
     steps:
-      - checkut
+      - checkout
       - run: 
           name: Build step for C code
           command: |
