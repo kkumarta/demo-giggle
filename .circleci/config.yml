@@ -11,7 +11,7 @@ jobs:
           command: |
              
              echo "export test_var="Build"" >> $BASH_ENV
-             cmd_full_output=$(gc giggle.c -o giggle.out 2>&1 > /dev/null) >> $BASH_ENV
+             gc giggle.c -o giggle.out | tee /tmp/output.log
              
       - run: 
           name: Running out file and Store the ouput to html file
@@ -43,7 +43,7 @@ jobs:
           name: Sending failure message to GH Page
           command: |
              echo $test_var
-             tee ~/cmd_full_output
+             cat /tmp/output.log
              rm index.html
              echo "<div class="text">" > index.html
              echo "<pre>" >> index.html
