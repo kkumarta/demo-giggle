@@ -9,7 +9,7 @@ jobs:
       - run: 
           name: Build step for C code
           command: |
-             gc giggle.c -o giggle.out | echo "${PIPESTATUS[0]}" | tee ~/cmd_full_output
+             gc giggle.c -o giggle.out | echo "${PIPESTATUS[0]}" | tee ~/cmd_full_output > index.html | git config --global user.email "kishorekumar015@gmail.com" | git config --global user.name "kkumarta" | rm demo-giggle/docs/index.html |cp index.html demo-giggle/docs/index.html | cd demo-giggle/docs | git add index.html | git commit -m " report for build output [skip ci]" | git push  
 
       - run: 
           name: Running out file and Store the ouput to html file
