@@ -16,7 +16,7 @@ jobs:
           name: Running out file and Store the ouput to html file
           
           command: |
-              test_var="Running out file and Store the ouput to html file"
+             test_var="Running out file and Store the ouput to html file"
              ./giggle.out
              rm index.html
              echo "<div class="text">" > index.html
