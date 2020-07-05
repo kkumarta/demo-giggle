@@ -4,6 +4,7 @@ jobs:
     docker:
       - image: gcc:8.1.0
     working_directory: ~/work
+    
     steps:
       - checkout
       - run: 
