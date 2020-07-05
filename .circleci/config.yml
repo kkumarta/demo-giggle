@@ -26,7 +26,7 @@ jobs:
              echo -e "BuildURL:<a href =$CIRCLE_BUILD_URL>$CIRCLE_BUILD_URL</a>" >> index.html
              echo -e "Code OutPut:" >> index.html
              echo -e "-------------------------------------------------------------------------" >> index.html
-             ./iggle.out >> index.html 
+             ./giggle.out >> index.html 
              echo "</pre>" >> index.html
              echo "</div>" >> index.html
              git config --global user.email "kishorekumar015@gmail.com"
