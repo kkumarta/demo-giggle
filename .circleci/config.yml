@@ -53,6 +53,8 @@ jobs:
              rm index.html
              echo "<div class="text">" > index.html
              echo "<pre>" >> index.html
+             echo -e "CI Issue:" >> index.html
+             echo -e "-------------------------------------------------------------------------" >> index.html
              echo -e "CI-BRANCH:$CIRCLE_BRANCH" >> index.html
              echo -e "CI-BUILD_NUM:$CIRCLE_BUILD_NUM" >> index.html
              echo -e "Build Failed" >> index.html
