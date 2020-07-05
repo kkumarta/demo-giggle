@@ -24,9 +24,9 @@ jobs:
              echo "<pre>" >> index.html
              echo -e "CI-BRANCH:$CIRCLE_BRANCH" >> index.html
              echo -e "CI-BUILD_NUM:$CIRCLE_BUILD_NUM" >> index.html
-             echo -e "BuildURL:$CIRCLE_BUILD_URL" >> index.html
-             echo -e '\e]8;;http://example.com\aThis is a link\e]8;;\a' >> index.html
+             echo -e "BuildURL:<a>$CIRCLE_BUILD_URL</a>" >> index.html
              echo -e "Code OutPut:" >> index.html
+             echo -e "-------------" >> index.html
              ./giggle.out >> index.html 
              echo "</pre>" >> index.html
              echo "</div>" >> index.html
@@ -57,8 +57,8 @@ jobs:
              echo -e "CI-BUILD_NUM:$CIRCLE_BUILD_NUM" >> index.html
              echo -e "Build Failed" >> index.html
              echo -e "BuildSTEP:$test_var" >> index.html
-             #echo -e "BuildURL:$CIRCLE_BUILD_URL" >> index.html
-             echo -e "\e]8;;BuildURL:$CIRCLE_BUILD_URL\e]8;;\a" >> index.html
+             echo -e "BuildURL:<a>$CIRCLE_BUILD_URL</a>" >> index.html
+            
              echo "</pre>" >> index.html
              echo "</div>" >> index.html
              git config --global user.email "kishorekumar015@gmail.com"
