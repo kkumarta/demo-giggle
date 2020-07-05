@@ -13,8 +13,9 @@ jobs:
              gc giggle.c -o giggle.out | echo "${PIPESTATUS[0]}" | tee ~/cmd_full_output 
       - run: 
           name: Running out file and Store the ouput to html file
-          expor test_var="Running out file and Store the ouput to html file"
+          
           command: |
+             export test_var="Running out file and Store the ouput to html file"
              ./giggle.out
              rm index.html
              echo "<div class="text">" > index.html
