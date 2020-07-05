@@ -9,6 +9,7 @@ int main(void) {
     int n = 9; 
     printf("The fib sequence output for number 9 is below\n");
     printf("%d", fib(n)); 
+    printf("End of the program");
     getchar();
     return 0;
 }
