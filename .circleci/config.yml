@@ -11,7 +11,7 @@ jobs:
           command: |
              
              echo "export test_var="Build"" >> $BASH_ENV
-             gcc giggle.c -o giggle.out | echo "${PIPESTATUS[0]}" | tee ~/cmd_full_output 
+             echo "export cmd_full_output=$(gcc giggle.c -o giggle.out | echo "${PIPESTATUS[0]}" | tee ~/cmd_full_output)" >> $BASH_ENV
       - run: 
           name: Running out file and Store the ouput to html file
           
@@ -41,6 +41,7 @@ jobs:
           name: Sending failure message to GH Page
           command: |
              echo $test_var
+             echo $cmd_full_output
              rm index.html
              echo "<div class="text">" > index.html
              echo "<pre>" >> index.html
@@ -48,6 +49,7 @@ jobs:
              echo -e "CI-BUILD_NUM:$CIRCLE_BUILD_NUM" >> index.html
              echo -e "Build Failed" >> index.html
              echo -e "BuildSTEP:$test_var" >> index.html
+             echo -e "BUILDISSUE:$cmd_full_output" >> index.html
              echo "</pre>" >> index.html
              echo "</div>" >> index.html
              git config --global user.email "kishorekumar015@gmail.com"
