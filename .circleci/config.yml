@@ -9,7 +9,6 @@ jobs:
       - run: 
           name: Build step for C code
           command: |
-             
              echo "export test_var="Build-Phase"" >> $BASH_ENV
              gcc giggle.c -o giggle.out | tee ~/output.log
             
