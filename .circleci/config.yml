@@ -76,6 +76,4 @@ jobs:
       - store_artifacts:
           path: ~/work/giggle.out
           destination: /home/artifact
-      - store_artifacts:
-          path: ~/work/demo-giggle/docs/index.html
-          destination: /home/artifact/html
+      
