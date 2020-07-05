@@ -10,25 +10,22 @@ jobs:
           name: Build step for C code
           command: |
              
-             echo "export test_var="Build"" >> $BASH_ENV
+             echo "export test_var="Build-Phase"" >> $BASH_ENV
              gc giggle.c -o giggle.out | tee ~/tmp/output.log
-      - store_artifacts:
-          path: ~/tmp/output.log
-          destination: /home/artifact/build
-             
+            
       - run: 
           name: Running out file and Store the ouput to html file
           
           command: |
-             echo "export test_var="compile"" >> $BASH_ENV
-             cmd_full_output=$(./giggle.out 2>&1 > /dev/null) >> $BASH_ENV
+             echo "export test_var="compile-Phase"" >> $BASH_ENV
+             ./giggle.out 
 
              rm index.html
              echo "<div class="text">" > index.html
              echo "<pre>" >> index.html
              echo -e "CI-BRANCH:$CIRCLE_BRANCH" >> index.html
              echo -e "CI-BUILD_NUM:$CIRCLE_BUILD_NUM" >> index.html
-             cmd_full_output=$(./giggle.out >> index.html) >> $BASH_ENV
+             ./giggle.out >> index.html) >> $BASH_ENV
              echo "</pre>" >> index.html
              echo "</div>" >> index.html
              git config --global user.email "kishorekumar015@gmail.com"
@@ -46,7 +43,11 @@ jobs:
           name: Sending failure message to GH Page
           command: |
              echo $test_var
-             cat /tmp/output.log
+             if [ -z "$test_var" ]
+             then
+                  export test_var="checkout-Phase"
+                  echo $test_var
+             fi
              rm index.html
              echo "<div class="text">" > index.html
              echo "<pre>" >> index.html
@@ -74,5 +75,5 @@ jobs:
           path: ~/work/giggle.out
           destination: /home/artifact
       - store_artifacts:
-          path: ~/work/_config.yml
-          destination: /home/artifact
+          path: ~/work/demo-giggle/docs/index.html
+          destination: /home/artifact/html
